@@ -82,16 +82,11 @@ API PUBLICADA está disponível para testes: https://fornecedor-api.azurewebsite
 - Swagger: descrição e documentação da API Rest.
 - Entity Framework Core: acesso ao banco de dados (mapeador relacional de objeto).
 - Injeção de Dependência para gerenciamento de dependências.
-- Utilização de Guid para IDs de entidades: garantir identificadores únicos e retirar a responsábilidade do banco de dados gerenciar identificadores sequenciais, evitando assim possíveis inconsistências ou concorrências.
+- Utilização de Guid para IDs de entidades: garantir identificadores únicos e retirar a responsabilidade do banco de dados gerenciar identificadores sequenciais, evitando assim possíveis inconsistências ou concorrências.
 - Banco de dados SQL Server
 - Microsoft Azure: APP Services + SQL DataBase + SQL Servers (API publicada / testes)
-- Continuous deployment: em integração com GitHubAction.
-
-
-## Considerações
-Pull Requests são bem-vindas. Para ajustes maiores, considere usar issues para melhor entendimento das alterações
-
-Em caso de dúvidas, entre em contato
+- CI/CD: usando GitHubAction como Build provider.
+- Data Seed: Insert de dados fictícios para teste na criação da base de dados 
 
 
 ## License
