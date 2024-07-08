@@ -37,7 +37,15 @@ namespace Plamove.Business.Services.FornecedorService
 
         public async Task<Guid?> Inserir(FornecedorVM fornecedorVM)
         {
-            var fornecedor = _mapper.Map<Fornecedor>(fornecedorVM);
+            var fornecedor = await _fornecedorRepository.FindByKey(fornecedorVM.Id);
+
+            if (fornecedor != null)
+            {
+                _avisoService.Adicionar("Fornecedor já cadastrado!");
+                return null;
+            }
+
+            fornecedor = _mapper.Map<Fornecedor>(fornecedorVM);
             await _fornecedorRepository.Insert(fornecedor);
 
             return fornecedor.Id;
